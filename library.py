@@ -47,6 +47,13 @@ def add_book (books):
     books.append(result)
     print("Book added!")
 
+def show_books(books):
+    if books == []:
+        print("No books yet")
+    else:
+        for i, book in enumerate(books, 1):
+            print(i, book.title, book.author, book.year, book.status())
+
 
 def main():
     filename = "Book Library v2.json"
@@ -54,6 +61,6 @@ def main():
     print("Book Library v2")
     add_book(books)
     save_books(filename, books)
-
+    show_books(books)
 
 main()
